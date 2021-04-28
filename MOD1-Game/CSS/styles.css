@@ -9,7 +9,9 @@ h1 {
 }
 
 button {
-    left: 500px;
+    margin:0 auto;
+    display:block;
+    margin-bottom: 10px;
 }
 
 .game-board {

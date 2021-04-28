@@ -16,62 +16,63 @@
 
     <div class="game-board">
         <!-- row 1 -->
-        <div class="game-board-slot white 1" id="white" value="1"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row1" id="white" value="1"></div>
+        <div class="game-board-slot white 2 row1"></div>
+        <div class="game-board-slot white 3 row1"></div>
+        <div class="game-board-slot white 4 row1"></div>
+        <div class="game-board-slot white 5 row1"></div>
+        <div class="game-board-slot white 6 row1"></div>
+        <div class="game-board-slot white 7 row1"></div>
 
         <!-- row 2 -->
-        <div class="game-board-slot white 1" id="white"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row2" id="white"></div>
+        <div class="game-board-slot white 2 row2"></div>
+        <div class="game-board-slot white 3 row2"></div>
+        <div class="game-board-slot white 4 row2"></div>
+        <div class="game-board-slot white 5 row2"></div>
+        <div class="game-board-slot white 6 row2"></div>
+        <div class="game-board-slot white 7 row2"></div>
 
         <!-- row 3 -->
-        <div class="game-board-slot white 1" id="white"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row3" id="white"></div>
+        <div class="game-board-slot white 2 row3"></div>
+        <div class="game-board-slot white 3 row3"></div>
+        <div class="game-board-slot white 4 row3"></div>
+        <div class="game-board-slot white 5 row3"></div>
+        <div class="game-board-slot white 6 row3"></div>
+        <div class="game-board-slot white 7 row3"></div>
 
         <!-- row 4 -->
-        <div class="game-board-slot white 1" id="white" value="1"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row4" id="white" value="1"></div>
+        <div class="game-board-slot white 2 row4"></div>
+        <div class="game-board-slot white 3 row4"></div>
+        <div class="game-board-slot white 4 row4"></div>
+        <div class="game-board-slot white 5 row4"></div>
+        <div class="game-board-slot white 6 row4"></div>
+        <div class="game-board-slot white 7 row4"></div>
 
         <!-- row 5 -->
-        <div class="game-board-slot white 1" id="white" value="1"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row5" id="white" value="1"></div>
+        <div class="game-board-slot white 2 row5"></div>
+        <div class="game-board-slot white 3 row5"></div>
+        <div class="game-board-slot white 4 row5"></div>
+        <div class="game-board-slot white 5 row5"></div>
+        <div class="game-board-slot white 6 row5"></div>
+        <div class="game-board-slot white 7 row5"></div>
 
         <!-- row 6 -->
-        <div class="game-board-slot white 1" id="white" value="1"></div>
-        <div class="game-board-slot white 2"></div>
-        <div class="game-board-slot white 3"></div>
-        <div class="game-board-slot white 4"></div>
-        <div class="game-board-slot white 5"></div>
-        <div class="game-board-slot white 6"></div>
-        <div class="game-board-slot white 7"></div>
+        <div class="game-board-slot white 1 row6" id="white" value="1"></div>
+        <div class="game-board-slot white 2 row6"></div>
+        <div class="game-board-slot white 3 row6"></div>
+        <div class="game-board-slot white 4 row6"></div>
+        <div class="game-board-slot white 5 row6"></div>
+        <div class="game-board-slot white 6 row6"></div>
+        <div class="game-board-slot white 7 row6"></div>
     </div>
 
-    <button onclick="reset()">Reset Board</button>
     <h1 class="player" id="player">Players Name</h1>
+    <button onclick="reset()">Reset Board</button>
+    
     <script>
 
         class Players {
@@ -93,6 +94,9 @@
         let blueMap = new Map();
         let redMap = new Map();
 
+        let blueMapRow = new Map();
+        let redMapRow = new Map();
+
         //let currentPlayer = "blue"
 
 
@@ -113,6 +117,7 @@
             slots[i].addEventListener("click", color);
             slots[i].addEventListener("click", checkStateHorizontal);
             slots[i].addEventListener("click", checkStateVertical);
+            slots[i].addEventListener("click", checkStateDraw);
 
         }
 
@@ -176,6 +181,20 @@
             }
             else
                 document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
+        }
+
+        function checkStateDraw(e) {
+
+            for (let i = 0; i < slots.length; i++) {
+
+                if (slots[i].classList.contains("white")) {
+                    return 0;
+                }
+            }
+
+            alert("Its a Draw");
+            reset();
+
         }
 
         function checkStateVertical(e) {
@@ -376,82 +395,222 @@
 
         function checkStateHorizontal(e) {
             //6
-            red = 0;
-            blue = 0;
-            for (let i = slots.length - 1; i > 0; i--) {
+            // red = 0;
+            // blue = 0;
+            //for (let i = slots.length - 1; i > 0; i--) {
 
-                // if (slots[i].classList.contains("blue") && slots[i].classList.contains("flag")) {
-                //     //red = 0;
+                //working hori start
+                // if (slots[i].classList.contains("white")) {
+
+                //     red = 0;
+                //     blue = 0;
+                //     //break;
+                // }
+                // else if (slots[i].classList.contains("blue")) {
+                //     red = 0;
                 //     blue += 1;
-                //     console.log(blue)
-                //     slots[i].classList.toggle("flag")
+                //     console.log(blue + " blue")
+                //     //slots[i].classList.toggle("flag")
 
                 //     if (blue == 4) {
-                //         alert("blue wins")
+                //         if (player_1.name != null)
+                //             alert(player_1.name + " wins")
+                //         else
+                //             alert(player_1.color + " wins")
                 //         //reset();
                 //         break;
                 //     }
                 // }
-                // else if (slots[i].classList.contains("red") && slots[i].classList.contains("flag")) {
-                //     //blue = 0;
+                // else if (slots[i].classList.contains("red")) {
+                //     blue = 0;
                 //     red++
-                //     console.log(red)
-                //     slots[i].classList.toggle("flag")
+                //     console.log(red + " red")
+                //     //slots[i].classList.toggle("flag")
 
                 //     if (red == 4) {
-                //         alert("red wins")
+                //         if (player_2.name != null) {
+                //             alert(player_2.name + " wins")
+                //             document.getElementById("player").innerHTML = player_2.name + " wins"
+                //         }
+                //         else
+                //             alert(player_2.color + " wins")
                 //         //reset();
                 //         break;
                 //     }
                 // }
 
+            //}
 
-                if (slots[i].classList.contains("white")) {
+            // hori state but with maps
+            for (let i = 1; i <= 7; i++) {
 
-                    red = 0;
-                    blue = 0;
-                    //break;
-                }
-                else if (slots[i].classList.contains("blue")) {
-                    red = 0;
-                    blue += 1;
-                    console.log(blue + " blue")
-                    //slots[i].classList.toggle("flag")
+                blueMapRow.set(i, 0);
+                redMapRow.set(i, 0);
+            }
 
-                    if (blue == 4) {
-                        if (player_1.name != null)
-                            alert(player_1.name + " wins")
-                        else
-                            alert(player_1.color + " wins")
-                        //reset();
-                        break;
-                    }
-                }
-                else if (slots[i].classList.contains("red")) {
-                    blue = 0;
-                    red++
-                    console.log(red + " red")
-                    //slots[i].classList.toggle("flag")
+            for (let i = 0; i < slots.length; i++) {
 
-                    if (red == 4) {
-                        if (player_2.name != null) {
-                            alert(player_2.name + " wins")
-                            document.getElementById("player").innerHTML = player_2.name + " wins"
+
+
+                if (slots[i].classList.contains("row1")) {
+
+
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(1, 0);
+
+                        let val = blueMapRow.get(1);
+                        val += 1;
+                        blueMapRow.set(1, val);
+
+                        if (val == 4) {
+                            alert("blue wins")
+                            break;
                         }
-                        else
-                            alert(player_2.color + " wins")
-                        //reset();
-                        break;
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(1, 0);
+
+                        let val = redMapRow.get(1);
+                        val += 1;
+                        redMapRow.set(1, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                            break;
+                        }
                     }
                 }
+                else if (slots[i].classList.contains("row2")) {
 
-                // if(i != slots.length - 1 && (slots[i].classList.contains("white") == false)) {
 
-                //     alert("its a draw")
-                // reset();
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(2, 0);
 
-                // }
+                        let val = blueMapRow.get(2);
+                        val += 1;
+                        blueMapRow.set(2, val);
 
+                        if (val == 4) {
+                            alert("blue wins")
+                        }
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(2, 0);
+
+                        let val = redMapRow.get(2);
+                        val += 1;
+                        redMapRow.set(2, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                        }
+                    }
+                }
+                else if (slots[i].classList.contains("row3")) {
+
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(3, 0);
+
+                        let val = blueMapRow.get(3);
+                        val += 1;
+                        blueMapRow.set(3, val);
+
+                        if (val == 4) {
+                            alert("blue wins")
+                            break;
+                        }
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(3, 0);
+
+                        let val = redMapRow.get(3);
+                        val += 1;
+                        redMapRow.set(3, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                        }
+                    }
+                }
+                else if (slots[i].classList.contains("row4")) {
+
+
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(4, 0);
+
+                        let val = blueMapRow.get(4);
+                        val += 1;
+                        blueMapRow.set(4, val);
+
+                        if (val == 4) {
+                            alert("blue wins")
+                        }
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(4, 0);
+
+                        let val = redMapRow.get(4);
+                        val += 1;
+                        redMapRow.set(4, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                        }
+                    }
+                }
+                else if (slots[i].classList.contains("row5")) {
+
+
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(5, 0);
+
+                        let val = blueMapRow.get(5);
+                        val += 1;
+                        blueMapRow.set(5, val);
+
+                        if (val == 4) {
+                            alert("blue wins")
+                        }
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(5, 0);
+
+                        let val = redMapRow.get(5)
+                        val += 1;
+                        redMapRow.set(5, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                        }
+                    }
+                }
+                else if (slots[i].classList.contains("row6")) {
+
+
+                    if (slots[i].classList.contains("blue")) {
+                        redMapRow.set(6, 0);
+
+                        let val = blueMapRow.get(6);
+                        val += 1;
+                        blueMapRow.set(6, val);
+
+                        if (val == 4) {
+                            alert("blue wins")
+                        }
+                    }
+                    else if (slots[i].classList.contains("red")) {
+                        blueMapRow.set(6, 0);
+
+                        let val = redMapRow.get(6);
+                        val += 1;
+                        redMapRow.set(6, val);
+
+                        if (val == 4) {
+                            alert("red wins")
+                        }
+                    }
+                }
+                
             }
         }
 
