@@ -1,0 +1,51 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    left: 500px;
+}
+
+.game-board {
+
+    width: 80vw;
+    height: 80vh;
+
+    margin-left: 10%;
+   
+    border: 3px solid black;
+    font-family: sans-serif;
+    
+    font-weight: bold;
+    color: white;
+    
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+.game-board-slot {
+
+    border: 2px solid black;
+    border-radius: 200px;
+}
+
+.white {
+    background-color: white;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
